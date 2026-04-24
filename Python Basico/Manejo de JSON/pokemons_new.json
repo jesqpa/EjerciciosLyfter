@@ -51,10 +51,10 @@
         }
     },
     {
-        "name": "Tremendin",
-        "type": "peludo",
-        "hp": 5,
-        "attack": 6,
-        "defense": 5
+        "name": "99999",
+        "type": "99999",
+        "hp": 99999,
+        "attack": 99999,
+        "defense": 99999
     }
 ]
