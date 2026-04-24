@@ -11,13 +11,26 @@ def extract_json(path):
 
 
 def write_to_file(path, text):  
-    with open(path, 'a', encoding='utf-8' ) as file: 
+    with open(path, 'w', encoding='utf-8' ) as file: 
         file.write(text+'\n')
 
 def append_new_pokemon(data):
-	name = input("Digite el nombre del Pokemon: ")
-	type_ = input("Digite el tipo del Pokemon: ")
+	try:
+		name = input("Digite el nombre del Pokemon: ")		
+		if(name==""):
+			raise ValueError("El nombre no puede estar vacío")
+	except ValueError as error:
+		print(f"Error: {error}")
+		return
 	
+	try:
+		type_ = input("Digite el tipo del Pokemon: ")
+		if(type_==""):
+			raise ValueError("El tipo no puede estar vacío")
+	except ValueError as error:
+		print(f"Error: {error}")
+		return
+
 	try:
 		hp = int(input("Digite el HP del Pokemon: "))
 	except ValueError:
@@ -44,10 +57,13 @@ def append_new_pokemon(data):
 		"defense": defense
 	}
 	data.append(new_pokemon)
-	write_to_file('pokemons_new.json', json.dumps(data, indent=4))
+	write_to_file('pokemons.json', json.dumps(data, indent=4))
 
-data = extract_json('pokemons.json')
-append_new_pokemon(data)
+def main():
+	data = extract_json('pokemons.json')
+	append_new_pokemon(data)
+
+main()
 
 
 
