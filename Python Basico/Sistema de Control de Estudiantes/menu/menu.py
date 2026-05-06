@@ -1,7 +1,7 @@
 from actions.actions import action
 
 def print_menu(menu_options):
-    print(">>> Selecione la acción a realizar") 
+    print(">>> Select the action to perform")
     for key, value in menu_options.items():
         print(f"{key}. {value}")
 
@@ -10,20 +10,20 @@ def validate_input(menu_options):
     if input_user in menu_options:
         action(input_user)            
     else:
-        print("Opción no válida, por favor seleccione una opción del menú.")
+        print("Invalid option, please select an option from the menu.")
         validate_input(menu_options)
 
 
 def send_menu():
     menu_options = {
-        "1": "Agregar estudiantes",
-        "2": "Mostrar información de estudiantes",
-        "3": "Mostrar promedios de estudiantes",
-        "4": "Mostrar mejores promedios estudiantes",
-        "5": "Exportar información de estudiantes",
-        "6": "Importar información de estudiantes",
-        "7": "Eliminar estudiante",
-        "8": "Mostrar estudiantes reprobados"
+        "1": "Add students",
+        "2": "Show students information",
+        "3": "Show students averages",
+        "4": "Show top students averages",
+        "5": "Export students information",
+        "6": "Import students information",
+        "7": "Delete student",
+        "8": "Show failed students"
     }
     print_menu(menu_options)    
     validate_input(menu_options)

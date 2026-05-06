@@ -6,11 +6,11 @@ def delete_student():
     try:
         students = get_students()    
         if len(students) == 0:
-            print("No hay estudiantes registrados.")
+            print("No registered students.")
             return
 
-        name = validate_name("Nombre completo del estudiante a eliminar: >>> ")
-        section = validate_section("Sección del estudiante a eliminar: >>> ")
+        name = validate_name("Full name of the student to delete: >>> ")
+        section = validate_section("Section of the student to delete: >>> ")
 
         student_to_delete = None
         for student in students:
@@ -21,9 +21,9 @@ def delete_student():
         if student_to_delete:
             students.remove(student_to_delete)
             set_students(students)
-            print(f"Estudiante '{name}' de la sección '{section}' eliminado exitosamente.")
+            print(f"Student '{name}' from section '{section}' deleted successfully.")
         else:
-            print(f"No se encontró un estudiante con el nombre '{name}' en la sección '{section}'.")
+            print(f"No student named '{name}' was found in section '{section}'.")
     
     except Exception as e:
-        print(f"Error al eliminar el estudiante: {e}")
+        print(f"Error deleting the student: {e}")

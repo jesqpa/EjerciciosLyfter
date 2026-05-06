@@ -5,7 +5,7 @@ def export_students_to_csv(file_path):
         from data.students import get_students
         students = get_students()   
         if len(students) == 0:
-            print("No hay estudiantes registrados para exportar.")
+            print("No registered students to export.")
             return  
         
         with open(file_path, 'w', newline='', encoding='utf-8') as csv_file:
@@ -15,7 +15,7 @@ def export_students_to_csv(file_path):
             for student in students:
                 writer.writerow(student)
 
-        print(f"Archivo CSV creado exitosamente: {file_path}")
+        print(f"CSV file created successfully: {file_path}")
         
     except Exception as e:
-        print(f"Error al importar estudiantes: {e}")
+        print(f"Error exporting students: {e}")

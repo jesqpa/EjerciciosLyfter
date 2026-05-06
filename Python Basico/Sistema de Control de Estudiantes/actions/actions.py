@@ -1,16 +1,16 @@
 
 def ask_repeat_action():
     while True:
-        repeat = input("¿Desea realizar otra acción? (s/n): >>> ").strip().lower()
-        if repeat in ("s", "si"):
+        repeat = input("Do you want to perform another action? (y/n): >>> ").strip().lower()
+        if repeat in ("y", "yes"):
             from menu.menu import send_menu
             send_menu()
             break
         elif repeat in ("n", "no"):
-            print("Gracias, se cierra el programa.")
+            print("Thank you, the program will close.")
             break
         else:
-            print("Opción no válida. Ingrese 's' o 'n'.")
+            print("Invalid option. Enter 'y' or 'n'.")
 
 
 def action(input_user):
@@ -29,12 +29,12 @@ def action(input_user):
     elif input_user == "5":
         from data.export_students import export_students_to_csv
         from actions.validators import validate_csv_export
-        file_path = validate_csv_export("Indique el nombre del archivo CSV a exportar (ej: estudiantes.csv): >>> ")
+        file_path = validate_csv_export("Enter the CSV file name to export (e.g. students.csv): >>> ")
         export_students_to_csv(file_path)
     elif input_user == "6":
         from data.import_students import import_students_from_csv
         from actions.validators import validate_csv_import
-        file_path = validate_csv_import("Indique el nombre del archivo CSV a importar (ej: estudiantes.csv): >>> ")
+        file_path = validate_csv_import("Enter the CSV file name to import (e.g. students.csv): >>> ")
         import_students_from_csv(file_path) 
     elif input_user == "7":        
         from actions.delete_student import delete_student

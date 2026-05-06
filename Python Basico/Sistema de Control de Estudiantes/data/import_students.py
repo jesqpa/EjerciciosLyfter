@@ -18,7 +18,7 @@ def import_students_from_csv(file_path):
 
         from data.students import set_students
         set_students(students)
-        print(f"Archivo CSV importado exitosamente: {file_path}")
+        print(f"CSV file imported successfully: {file_path}")
         
     except Exception as e:
-        print(f"Error al importar estudiantes: {e}")
+        print(f"Error importing students: {e}")

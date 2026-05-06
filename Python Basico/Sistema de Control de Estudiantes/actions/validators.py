@@ -5,17 +5,17 @@ def validate_grade(text):
             if 0 <= grade <= 100:
                 return grade
             else:
-                print("Error: La nota debe estar entre 0 y 100. Por favor, ingrese una nota válida.")             
+                print("Error: The grade must be between 0 and 100. Please enter a valid grade.")             
         except ValueError:
-            print("Error: Ingrese un valor numérico válido.")
+            print("Error: Enter a valid numeric value.")
 
 def validate_name(text):
     while True:
         name = input(text).strip()
         if name == "":
-            print("Error: El nombre no puede estar vacío. Por favor, ingrese un nombre válido.")
+            print("Error: The name cannot be empty. Please enter a valid name.")
         elif any(char.isdigit() for char in name):
-            print("Error: El nombre no puede incluir números. Por favor, ingrese un nombre válido.")
+            print("Error: The name cannot contain numbers. Please enter a valid name.")
         else:
             return name
 
@@ -24,22 +24,22 @@ def validate_section(text):
     while True:
         section = input(text).strip().upper()
         if section == "":
-            print("Error: La sección no puede estar vacía. Por favor, ingrese una sección válida.")
+            print("Error: The section cannot be empty. Please enter a valid section.")
             continue        
         pattern = r"^(1[0-1]|[1-9])[A-G]$"
         if re.match(pattern, section):
             return section
         else:
-            print("Error: La sección debe tener el formato correcto: (ej: 11B). De 1 a 11 y de A a G . Por favor, ingrese una sección válida.")
+            print("Error: The section must have the correct format: (e.g. 11B). From 1 to 11 and from A to G. Please enter a valid section.")
 
 def validate_csv_import(text):
     import os
     while True:
         file_path = input(text).strip()
         if not file_path.endswith(".csv"):
-            print("Error: El nombre del archivo debe terminar con '.csv'. Por favor, ingrese un nombre de archivo válido.")
+            print("Error: The file name must end with '.csv'. Please enter a valid file name.")
         elif not os.path.exists(file_path):
-            print(f"Error: El archivo '{file_path}' no existe. Por favor, ingrese un nombre de archivo válido.")
+            print(f"Error: The file '{file_path}' does not exist. Please enter a valid file name.")
         else:
             return file_path
 
@@ -48,13 +48,13 @@ def validate_csv_export(text):
     while True:
         file_path = input(text).strip()
         if not file_path.endswith(".csv"):
-            print("Error: El nombre del archivo debe terminar con '.csv'. Por favor, ingrese un nombre de archivo válido.")
+            print("Error: The file name must end with '.csv'. Please enter a valid file name.")
         elif os.path.exists(file_path):
-            overwrite = input(f"El archivo '{file_path}' ya existe. ¿Desea sobrescribirlo? (s/n): >>> ").strip().lower()
-            if overwrite in ("s", "si"):
+            overwrite = input(f"The file '{file_path}' already exists. Do you want to overwrite it? (y/n): >>> ").strip().lower()
+            if overwrite in ("y", "yes"):
                 return file_path
             else:
-                print("Exportación cancelada. Por favor, ingrese un nuevo nombre de archivo.")
+                print("Export canceled. Please enter a new file name.")
         else:
             return file_path
         
@@ -65,16 +65,16 @@ def validate_number_of_students(text):
             if num_students > 0:
                 return num_students
             else:
-                raise ValueError("El número de estudiantes debe ser un entero positivo.")                
+                raise ValueError("The number of students must be a positive integer.")                
         except ValueError as error:
-            print(f"Error: {error}. Ingrese un valor numérico válido.")
+            print(f"Error: {error}. Enter a valid numeric value.")
 
 def validate_not_duplicate(students, new_student):   
     try:          
         for student in students:  
             if (student["name"].lower() == new_student["name"].lower() and student["section"].upper() == new_student["section"].upper()):
-                raise ValueError(f"El estudiante {new_student['name']} en la sección {new_student['section']} ya existe. No se pueden agregar estudiantes duplicados.")
+                raise ValueError(f"The student {new_student['name']} in section {new_student['section']} already exists. Duplicate students cannot be added.")
     except ValueError as error:
-        print(f"Error: {error} El estudiante no se agregará.")
+        print(f"Error: {error} The student will not be added.")
         return False
     return True

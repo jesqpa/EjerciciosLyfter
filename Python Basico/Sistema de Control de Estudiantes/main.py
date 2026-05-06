@@ -1,7 +1,7 @@
 from menu.menu import send_menu
 
 def main():
-    print("Bienvenido al Sistema de Control de Estudiantes")
+    print("Welcome to the Student Control System")
     send_menu()
 
 main()
