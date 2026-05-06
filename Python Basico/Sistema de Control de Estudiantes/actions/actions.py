@@ -27,13 +27,20 @@ def action(input_user):
         from actions.view_students import view_top_students
         view_top_students()        
     elif input_user == "5":
-        print("")
+        from data.export_students import export_students_to_csv
+        from actions.validators import validate_csv_export
+        file_path = validate_csv_export("Indique el nombre del archivo CSV a exportar (ej: estudiantes.csv): >>> ")
+        export_students_to_csv(file_path)
     elif input_user == "6":
-        print("")
-    elif input_user == "7":
+        from data.import_students import import_students_from_csv
+        from actions.validators import validate_csv_import
+        file_path = validate_csv_import("Indique el nombre del archivo CSV a importar (ej: estudiantes.csv): >>> ")
+        import_students_from_csv(file_path) 
+    elif input_user == "7":        
         from actions.delete_student import delete_student
         delete_student()        
     elif input_user == "8":
-        print("")
+        from actions.view_students import view_reprobed_students
+        view_reprobed_students()        
 
     ask_repeat_action()

@@ -32,6 +32,32 @@ def validate_section(text):
         else:
             print("Error: La sección debe tener el formato correcto: (ej: 11B). De 1 a 11 y de A a G . Por favor, ingrese una sección válida.")
 
+def validate_csv_import(text):
+    import os
+    while True:
+        file_path = input(text).strip()
+        if not file_path.endswith(".csv"):
+            print("Error: El nombre del archivo debe terminar con '.csv'. Por favor, ingrese un nombre de archivo válido.")
+        elif not os.path.exists(file_path):
+            print(f"Error: El archivo '{file_path}' no existe. Por favor, ingrese un nombre de archivo válido.")
+        else:
+            return file_path
+
+def validate_csv_export(text):
+    import os
+    while True:
+        file_path = input(text).strip()
+        if not file_path.endswith(".csv"):
+            print("Error: El nombre del archivo debe terminar con '.csv'. Por favor, ingrese un nombre de archivo válido.")
+        elif os.path.exists(file_path):
+            overwrite = input(f"El archivo '{file_path}' ya existe. ¿Desea sobrescribirlo? (s/n): >>> ").strip().lower()
+            if overwrite in ("s", "si"):
+                return file_path
+            else:
+                print("Exportación cancelada. Por favor, ingrese un nuevo nombre de archivo.")
+        else:
+            return file_path
+        
 def validate_number_of_students(text):
     while True:
         try:

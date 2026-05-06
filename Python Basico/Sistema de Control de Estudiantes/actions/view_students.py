@@ -12,6 +12,23 @@ def print_students_with_averages(students):
     for i, student in enumerate(students, start=1):
         average = get_average_grade(student)
         print(f"\t{i}. {student['name']} - Sección: {student['section']} - Promedio: {average:.2f}")
+
+def reprobed_students(students):    
+    print("Lista de Estudiantes Reprobados:")
+    reprobed = False
+    for student in students:   
+        grades = {
+            "Español": student["spanish_grade"],
+            "Inglés": student["english_grade"],
+            "Sociales": student["social_studies_grade"],
+            "Ciencias": student["science_grade"]
+        }     
+        for key, value in grades.items():
+            if value < 60:
+                print(f"\t- Estudiante: {student['name']} - Sección: {student['section']} - Materia: {key} - Nota: {value}")
+                reprobed = True
+    if not reprobed:
+        print("No hay estudiantes reprobados.")
         
 def print_top_students(students, top_n=3):
     students_with_averages = [(student, get_average_grade(student)) for student in students]
@@ -24,30 +41,62 @@ def print_top_students(students, top_n=3):
 
 def view_top_students():
     from data.students import get_students
+    
+    try:    
+        students = get_students()    
+        if len(students) == 0:
+            print("No hay estudiantes registrados.")
+            return
 
-    students = get_students()
-    if len(students) == 0:
-        print("No hay estudiantes registrados.")
+        print_top_students(students)
+    
+    except Exception as e:
+        print(f"Error al obtener la lista de estudiantes: {e}")
         return
 
-    print_top_students(students)
+    
 
 def view_students():
     from data.students import get_students
 
-    students = get_students()
-    if len(students) == 0:
-        print("No hay estudiantes registrados.")
+    try:    
+        students = get_students()
+        if len(students) == 0:
+            print("No hay estudiantes registrados.")
+            return
+
+        print_students_list(students)
+        
+    except Exception as e:
+        print(f"Error al obtener la lista de estudiantes: {e}")
         return
 
-    print_students_list(students)
+def view_reprobed_students():
+    from data.students import get_students
+
+    try:    
+        students = get_students()    
+        if len(students) == 0:
+            print("No hay estudiantes registrados.")
+            return
+
+        reprobed_students(students)
+
+    except Exception as e:
+        print(f"Error al obtener la lista de estudiantes: {e}")
+        return
 
 def view_students_with_averages():
     from data.students import get_students
 
-    students = get_students()
-    if len(students) == 0:
-        print("No hay estudiantes registrados.")
-        return
+    try:    
+        students = get_students()    
+        if len(students) == 0:
+            print("No hay estudiantes registrados.")
+            return
 
-    print_students_with_averages(students)
+        print_students_with_averages(students)
+        
+    except Exception as e:
+        print(f"Error al obtener la lista de estudiantes: {e}")
+        return
