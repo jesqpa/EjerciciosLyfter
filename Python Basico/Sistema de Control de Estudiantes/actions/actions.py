@@ -14,6 +14,7 @@ def ask_repeat_action():
 
 
 def action(input_user):
+    exit_option = False
     if input_user == "1":
         from actions.add_students import add_students
         add_students()  
@@ -41,6 +42,12 @@ def action(input_user):
         delete_student()        
     elif input_user == "8":
         from actions.view_students import view_reprobed_students
-        view_reprobed_students()        
+        view_reprobed_students()    
+    elif input_user == "9": 
+        exit_option = True
+        print("Thank you, the program will close.")   
+    else:   
+        print("Invalid option, please select an option from the menu.") 
 
-    ask_repeat_action()
+    if not exit_option:
+        ask_repeat_action()

@@ -17,11 +17,13 @@ def delete_student():
             if student['name'].lower() == name.lower() and student['section'].lower() == section.lower():
                 student_to_delete = student
                 break
-
+        
         if student_to_delete:
-            students.remove(student_to_delete)
-            set_students(students)
-            print(f"Student '{name}' from section '{section}' deleted successfully.")
+            confirm_delete = input(f"Student found: {student_to_delete['name']} - Section: {student_to_delete['section']}. Do you want to delete this student? (y/n): >>> ")
+            if confirm_delete.lower() == "y":
+                students.remove(student_to_delete)
+                set_students(students)
+                print(f"Student '{name}' from section '{section}' deleted successfully.")
         else:
             print(f"No student named '{name}' was found in section '{section}'.")
     

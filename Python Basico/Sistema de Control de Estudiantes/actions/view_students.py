@@ -9,9 +9,14 @@ def print_students_list(students):
 
 def print_students_with_averages(students):
     print("Student List with Average:")
+    total_averages = 0
     for i, student in enumerate(students, start=1):
         average = get_average_grade(student)
+        total_averages += average
         print(f"\t{i}. {student['name']} - Section: {student['section']} - Average: {average:.2f}")
+    
+    overall_average = total_averages / len(students)
+    print(f"\tOverall Average: {overall_average:.2f}")
 
 def reprobed_students(students):    
     print("Failed Students List:")

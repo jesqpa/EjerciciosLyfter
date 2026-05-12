@@ -4,4 +4,5 @@ def main():
     print("Welcome to the Student Control System")
     send_menu()
 
-main()
+if __name__ == "__main__":
+    main()

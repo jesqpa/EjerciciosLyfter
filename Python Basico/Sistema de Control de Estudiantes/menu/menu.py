@@ -23,7 +23,8 @@ def send_menu():
         "5": "Export students information",
         "6": "Import students information",
         "7": "Delete student",
-        "8": "Show failed students"
+        "8": "Show failed students",
+        "9": "Exit"
     }
     print_menu(menu_options)    
     validate_input(menu_options)
