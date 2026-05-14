@@ -1,10 +1,10 @@
 
-def delete_student():
-    from data.students import get_students, set_students
+def delete_student(students):
+    
     from actions.validators import validate_name, validate_section
     
     try:
-        students = get_students()    
+        
         if len(students) == 0:
             print("No registered students.")
             return
@@ -21,8 +21,7 @@ def delete_student():
         if student_to_delete:
             confirm_delete = input(f"Student found: {student_to_delete['name']} - Section: {student_to_delete['section']}. Do you want to delete this student? (y/n): >>> ")
             if confirm_delete.lower() == "y":
-                students.remove(student_to_delete)
-                set_students(students)
+                students.remove(student_to_delete)                
                 print(f"Student '{name}' from section '{section}' deleted successfully.")
         else:
             print(f"No student named '{name}' was found in section '{section}'.")

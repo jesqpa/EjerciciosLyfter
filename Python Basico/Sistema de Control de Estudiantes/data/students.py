@@ -25,9 +25,9 @@ def get_students():
 def set_students(students):  
     fieldnames = ["name", "section", "spanish_grade", "english_grade", "social_studies_grade", "science_grade"]
     with open(STUDENTS_FILE, 'w', newline='', encoding='utf-8') as csv_file: 
+        writer = csv.DictWriter(csv_file, fieldnames)
+        writer.writeheader()
         if students:
-            writer = csv.DictWriter(csv_file, fieldnames)
-            writer.writeheader()
             writer.writerows(students)
 
 

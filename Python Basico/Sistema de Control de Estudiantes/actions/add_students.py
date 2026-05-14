@@ -1,9 +1,7 @@
 
 
-def add_students():
-    from data.students import get_students, set_students
+def add_students(students):
 
-    students = get_students()   
     from actions.validators import validate_name, validate_section, validate_grade, validate_not_duplicate, validate_number_of_students
     num_students = validate_number_of_students("How many students do you want to add? >>> ")
     
@@ -25,8 +23,7 @@ def add_students():
                 "science_grade": science_grade
             }
             if(validate_not_duplicate(students, student)):
-                students.append(student)   
-                set_students(students)
+                students.append(student)                   
             
     except ValueError as error:
         print(f"Error: {error}. ")

@@ -45,11 +45,9 @@ def print_top_students(students, top_n=3):
     for i, (student, average) in enumerate(top_students, start=1):
         print(f"\t{i}. {student['name']} - Section: {student['section']} - Average: {average:.2f}")
 
-def view_top_students():
-    from data.students import get_students
-    
-    try:    
-        students = get_students()    
+def view_top_students(students):
+        
+    try:               
         if len(students) == 0:
             print("No registered students.")
             return
@@ -62,11 +60,9 @@ def view_top_students():
 
     
 
-def view_students():
-    from data.students import get_students
+def view_students(students):    
 
-    try:    
-        students = get_students()
+    try:            
         if len(students) == 0:
             print("No registered students.")
             return
@@ -77,11 +73,8 @@ def view_students():
         print(f"Error getting the student list: {e}")
         return
 
-def view_reprobed_students():
-    from data.students import get_students
-
-    try:    
-        students = get_students()    
+def view_reprobed_students(students):
+    try:              
         if len(students) == 0:
             print("No registered students.")
             return
@@ -92,11 +85,9 @@ def view_reprobed_students():
         print(f"Error getting the student list: {e}")
         return
 
-def view_students_with_averages():
-    from data.students import get_students
-
+def view_students_with_averages(students):
+    
     try:    
-        students = get_students()    
         if len(students) == 0:
             print("No registered students.")
             return

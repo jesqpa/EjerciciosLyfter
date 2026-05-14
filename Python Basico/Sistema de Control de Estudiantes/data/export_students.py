@@ -1,9 +1,7 @@
-def export_students_to_csv(file_path):
+def export_students_to_csv(students, file_path):
     import csv
 
-    try:
-        from data.students import get_students
-        students = get_students()   
+    try:           
         if len(students) == 0:
             print("No registered students to export.")
             return  

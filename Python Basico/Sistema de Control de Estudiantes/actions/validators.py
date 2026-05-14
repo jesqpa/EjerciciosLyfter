@@ -26,11 +26,11 @@ def validate_section(text):
         if section == "":
             print("Error: The section cannot be empty. Please enter a valid section.")
             continue        
-        pattern = r"^(1[0-1]|[1-9])[A-G]$"
+        pattern = r"^(1[0-1]|[1-9])[A-Z]$"
         if re.match(pattern, section):
             return section
         else:
-            print("Error: The section must have the correct format: (e.g. 11B). From 1 to 11 and from A to G. Please enter a valid section.")
+            print("Error: The section must have the correct format: (e.g. 11B). From 1 to 11 and from A to Z. Please enter a valid section.")
 
 def validate_csv_import(text):
     import os
