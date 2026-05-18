@@ -1,0 +1,181 @@
+PS E:\Python\EjerciciosLyfter\Python Basico> git log
+commit c1ae17764a14a24a72d87a331be14cb13ebfc207 (HEAD -> past-exercises, origin/past-exercises)
+Author: Jonathan Esquivel <jesqpa@gmail.com>
+Date:   Fri Apr 24 16:23:48 2026 -0600
+
+    Uploading Git Exercise
+
+** Qué cambió?  se cargaron las nuevas actualizaciones a la rama past-exercises
+
+** Por qué se hizo ese cambio?según solicitud del ejercicio
+
+
+commit 24493220b1979619b89d555e1ab39f7e4418f6e6 (origin/main, origin/HEAD, main)
+Merge: e58189a 77e5136
+Author: Jonathan Esquivel <jesqpa@gmail.com>
+Date:   Fri Apr 24 16:10:43 2026 -0600
+
+    Merge pull request #3 from jesqpa/ejercicios-listos
+    
+    Uploading JSON extra exercices
+
+** Qué cambió?
+
+** Por qué se hizo ese cambio?
+
+
+commit 77e5136caf06b10fcf890feebb611dcc05498868 (origin/ejercicios-listos, ejercicios-listos)
+Author: Jonathan Esquivel <jesqpa@gmail.com>
+Date:   Fri Apr 24 16:05:53 2026 -0600
+
+    Uploading JSON extra exercices
+
+** Qué cambió?
+
+** Por qué se hizo ese cambio?
+
+
+commit e58189af6502070d27b6aadea5a558b0de2c5359
+Merge: 5c54d3a 0fc7954
+Author: Jonathan Esquivel <jesqpa@gmail.com>
+Date:   Thu Apr 23 17:56:53 2026 -0600
+:...skipping...
+commit c1ae17764a14a24a72d87a331be14cb13ebfc207 (HEAD -> past-exercises, origin/past-exercises)
+Author: Jonathan Esquivel <jesqpa@gmail.com>
+Date:   Fri Apr 24 16:23:48 2026 -0600
+
+    Uploading Git Exercise
+
+** Qué cambió?
+
+** Por qué se hizo ese cambio?
+
+
+commit 24493220b1979619b89d555e1ab39f7e4418f6e6 (origin/main, origin/HEAD, main)
+Merge: e58189a 77e5136
+Author: Jonathan Esquivel <jesqpa@gmail.com>
+Date:   Fri Apr 24 16:10:43 2026 -0600
+
+    Merge pull request #3 from jesqpa/ejercicios-listos
+    
+    Uploading JSON extra exercices
+
+** Qué cambió?  Creamos un pull request para actualizar otra branch
+
+** Por qué se hizo ese cambio?
+
+
+commit 77e5136caf06b10fcf890feebb611dcc05498868 (origin/ejercicios-listos, ejercicios-listos)
+Author: Jonathan Esquivel <jesqpa@gmail.com>
+Date:   Fri Apr 24 16:05:53 2026 -0600
+
+    Uploading JSON extra exercices
+
+** Qué cambió?  nos pasamos a otro branch para actualizarlo
+
+** Por qué se hizo ese cambio?
+
+
+commit e58189af6502070d27b6aadea5a558b0de2c5359
+Merge: 5c54d3a 0fc7954
+Author: Jonathan Esquivel <jesqpa@gmail.com>
+Date:   Thu Apr 23 17:56:53 2026 -0600
+
+    Merge pull request #2 from jesqpa/ejercicios-modulos
+    
+    Module Exercise!! 1
+
+** Qué cambió?
+
+** Por qué se hizo ese cambio?
+
+
+commit 0fc79543634178f75e069c4e8483b068806af7c9 (origin/ejercicios-modulos, ejercicios-modulos)
+Author: Jonathan Esquivel <jesqpa@gmail.com>
+Date:   Thu Apr 23 17:52:52 2026 -0600
+
+    Module Exercise!! 1
+
+** Qué cambió? nos pasamos a otro branch para actualizarlo
+
+** Por qué se hizo ese cambio?
+
+
+commit 5c54d3a7b82d39d84f0a353b65df27e5db185d70
+Merge: 6cf8d56 6e590c1
+Author: Jonathan Esquivel <jesqpa@gmail.com>
+:...skipping...
+commit c1ae17764a14a24a72d87a331be14cb13ebfc207 (HEAD -> past-exercises, origin/past-exercises)
+Author: Jonathan Esquivel <jesqpa@gmail.com>
+Date:   Fri Apr 24 16:23:48 2026 -0600
+
+    Uploading Git Exercise
+
+** Qué cambió?  Cargamos un nuevo ejercicio
+
+** Por qué se hizo ese cambio?
+
+
+commit 24493220b1979619b89d555e1ab39f7e4418f6e6 (origin/main, origin/HEAD, main)
+Merge: e58189a 77e5136
+Author: Jonathan Esquivel <jesqpa@gmail.com>
+Date:   Fri Apr 24 16:10:43 2026 -0600
+
+    Merge pull request #3 from jesqpa/ejercicios-listos
+    
+    Uploading JSON extra exercices
+
+** Qué cambió?  generamos un pull request para aplicar los cambios a la rama main
+
+** Por qué se hizo ese cambio?
+
+
+commit 77e5136caf06b10fcf890feebb611dcc05498868 (origin/ejercicios-listos, ejercicios-listos)
+Author: Jonathan Esquivel <jesqpa@gmail.com>
+Date:   Fri Apr 24 16:05:53 2026 -0600
+
+    Uploading JSON extra exercices
+
+** Qué cambió?  Nos cambiamos de branch para cargar nuevos ejercicios
+
+** Por qué se hizo ese cambio?  se cargaron ejercicios de Manejo de JSON
+
+
+
+commit e58189af6502070d27b6aadea5a558b0de2c5359
+Merge: 5c54d3a 0fc7954
+Author: Jonathan Esquivel <jesqpa@gmail.com>
+Date:   Thu Apr 23 17:56:53 2026 -0600
+
+    Merge pull request #2 from jesqpa/ejercicios-modulos
+    
+    Module Exercise!! 1
+
+** Qué cambió?  Este es el merge del pull request
+
+** Por qué se hizo ese cambio?
+
+
+commit 0fc79543634178f75e069c4e8483b068806af7c9 (origin/ejercicios-modulos, ejercicios-modulos)
+Author: Jonathan Esquivel <jesqpa@gmail.com>
+Date:   Thu Apr 23 17:52:52 2026 -0600
+
+    Module Exercise!! 1
+
+** Qué cambió?  Se agregó un nuevo módulo como ejercicio
+
+** Por qué se hizo ese cambio?  Se agregó una nueva carpeta Python Intermedio/Módulos y el archivo exercise1.py
+
+
+commit 5c54d3a7b82d39d84f0a353b65df27e5db185d70
+Merge: 6cf8d56 6e590c1
+Author: Jonathan Esquivel <jesqpa@gmail.com>
+Date:   Thu Apr 23 17:45:19 2026 -0600
+
+    Merge pull request #1 from jesqpa/ejercicios-listos
+    
+    Uploading first exercices
+
+** Qué cambió?  Este fue el primer commit
+
+** Por qué se hizo ese cambio?  
