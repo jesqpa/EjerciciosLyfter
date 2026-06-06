@@ -57,6 +57,8 @@ class SavingsAccount(BankAccount):
             except Exception as e:
                 print(f"*** Error: {e}")
 
+
+    @staticmethod
     def request_min_balance():
         while True:
             try:        

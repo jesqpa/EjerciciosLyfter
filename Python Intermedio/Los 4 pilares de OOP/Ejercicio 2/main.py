@@ -1,11 +1,14 @@
+from abc import ABC, abstractmethod
 
-class Shape():
+class Shape(ABC):
     def __init__(self, name):
         self.__name = name
 
+    @abstractmethod
     def calculate_perimeter(self):
         pass
-        
+
+    @abstractmethod
     def calculate_area(self):
         pass
 
