@@ -30,29 +30,34 @@ class Employee:
 
 
 def main():
-    # Crear un empleado
-    employee = Employee("Juan", 3000)
+    try:
+        salary = float(input("Ingrese el salario inicial del empleado: "))
+
+    except ValueError:
+        print("Por favor, ingrese un número válido para el salario.")
+        return
     
+    try:
+        name = input("Ingrese el nombre del empleado: ")
+    except ValueError:
+        print("Por favor, ingrese un nombre válido para el empleado.")
+        return
+    
+    employee = Employee(name, salary)
     print(f"Nombre: {employee.name}")
     print(f"Salario inicial: ${employee.salary:.2f}")
     
-    # Promover con un aumento del 10%
-    employee.promote(10)
-    print(f"Salario después de promoción (10%): ${employee.salary:.2f}")
     
-    # Cambiar nombre
-    employee.name = "Juan Pérez"
-    print(f"Nuevo nombre: {employee.name}")
-    
-    # Cambiar salario directamente
-    employee.salary = 4000
-    print(f"Salario actualizado: ${employee.salary:.2f}")
-    
-    # Intentar establecer un salario negativo (esto causará un error)
     try:
-        employee.salary = -1000
-    except ValueError as e:
-        print(f"Error: {e}")
+        percentage = float(input("Ingrese el porcentaje de aumento para la promoción: "))
+    except ValueError:
+        print("Por favor, ingrese un número válido para el porcentaje.")
+        return
+    
+    employee.promote(percentage)
+    print(f"Salario después de promoción (10%): ${employee.salary:.2f}")
+        
+    
 
 
 if __name__ == "__main__":
