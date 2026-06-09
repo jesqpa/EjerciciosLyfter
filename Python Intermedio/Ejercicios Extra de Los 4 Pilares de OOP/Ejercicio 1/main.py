@@ -1,7 +1,7 @@
 class Employee:
     def __init__(self, name, salary):
         self._name = name
-        self._salary = salary
+        self.salary = salary
 
     @property
     def name(self):
@@ -17,45 +17,39 @@ class Employee:
 
     @salary.setter
     def salary(self, value):
-        if value < 0:
-            raise ValueError("El salario no puede ser negativo")
+        if value <= 0:
+            raise ValueError("El salario no puede ser cero o negativo")
         self._salary = value
 
-    def promote(self, percentage):
-        """Aumenta el salario por un porcentaje definido"""
-        if percentage < 0:
-            raise ValueError("El porcentaje no puede ser negativo")
-        increase = self._salary * (percentage / 100)
-        self._salary += increase
+    def promote(self):
+        """Solicita y valida un porcentaje de aumento, luego aplica el aumento al salario"""
+        while True:
+            try:
+                percentage = float(input("Ingrese el porcentaje de aumento para la promoción (0.0-1.0): "))
+                if percentage < 0 or percentage > 1:
+                    raise ValueError("El porcentaje debe ser un valor entre 0 y 1")
+                increase = self._salary * percentage
+                self._salary += increase
+                break
+            except ValueError as e:
+                print(f"Error: {e}")
 
 
 def main():
-    try:
-        salary = float(input("Ingrese el salario inicial del empleado: "))
-
-    except ValueError:
-        print("Por favor, ingrese un número válido para el salario.")
-        return
+    while True:
+        try:
+            salary = float(input("Ingrese el salario inicial del empleado: "))
+            name = input("Ingrese el nombre del empleado: ")
+            employee = Employee(name, salary)
+            break
+        except ValueError as e:
+            print(f"Error: {e}")
     
-    try:
-        name = input("Ingrese el nombre del empleado: ")
-    except ValueError:
-        print("Por favor, ingrese un nombre válido para el empleado.")
-        return
-    
-    employee = Employee(name, salary)
     print(f"Nombre: {employee.name}")
     print(f"Salario inicial: ${employee.salary:.2f}")
     
-    
-    try:
-        percentage = float(input("Ingrese el porcentaje de aumento para la promoción: "))
-    except ValueError:
-        print("Por favor, ingrese un número válido para el porcentaje.")
-        return
-    
-    employee.promote(percentage)
-    print(f"Salario después de promoción (10%): ${employee.salary:.2f}")
+    employee.promote()
+    print(f"Salario después de promoción: ${employee.salary:.2f}")
         
     
 
