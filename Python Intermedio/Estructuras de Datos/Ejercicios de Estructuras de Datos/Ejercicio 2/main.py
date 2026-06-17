@@ -53,6 +53,19 @@ class DoubleEndedQueue:
       current = current.next
     print("Final de la estructura\n***")
 
+  def bubble_sort(self):
+    if self.head is None:
+      return
+    swapped = True
+    while swapped:
+      swapped = False
+      current = self.head
+      while current.next:
+        if current.data > current.next.data:
+          current.data, current.next.data = current.next.data, current.data
+          swapped = True
+        current = current.next
+
 octavo_nodo = Node("Soy el octavo nodo")
 setimo_nodo = Node("Soy el séptimo nodo")
 sexto_nodo = Node("Soy el sexto nodo")
@@ -80,3 +93,7 @@ deq.print_double_ended_queue()
 # deq.pop_left()
 
 # deq.print_double_ended_queue()
+
+print("Ordenamiento")
+deq.bubble_sort()
+deq.print_double_ended_queue()

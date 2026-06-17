@@ -29,20 +29,37 @@ class Stack:
       current = current.next
     print("Final de la pila\n***")
 
-tercer_nodo = Node("Soy el tercer nodo")
-segundo_nodo = Node("Soy el segundo nodo", tercer_nodo)
-primer_nodo = Node("Soy el primer nodo", segundo_nodo)
+  def bubble_sort(self):
+    if self.head is None:
+      return
+    swapped = True
+    while swapped:
+      swapped = False
+      current = self.head
+      while current.next:
+        if current.data > current.next.data:
+          current.data, current.next.data = current.next.data, current.data
+          swapped = True
+        current = current.next
+
+tercer_nodo = Node("3")
+segundo_nodo = Node("2", tercer_nodo)
+primer_nodo = Node("1", segundo_nodo)
 
 stack = Stack()
 stack.push(primer_nodo)
 stack.push(segundo_nodo)
 stack.push(tercer_nodo)
 
+# stack.print_stack()
+
+# stack.pop()
+# stack.pop()
+# stack.pop()
+# stack.pop()
+
 stack.print_stack()
 
-stack.pop()
-stack.pop()
-stack.pop()
-stack.pop()
-
+print("Ordenamiento")
+stack.bubble_sort()
 stack.print_stack()
