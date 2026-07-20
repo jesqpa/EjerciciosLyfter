@@ -1,0 +1,122 @@
+from data.student import Student
+
+
+def get_average_grade(student: Student):
+    if not isinstance(student, Student):
+        raise TypeError("get_average_grade expects a Student instance")
+    return student.average()
+
+def print_students_list(students):
+    print("Student List:")
+    for i, student in enumerate(students, start=1):
+        print(
+            f"- Student: {i} \n\tName: {student.name}, \n\tSection: {student.section}, \n\tSpanish grade: {student.spanish_grade}, \n\tEnglish grade: {student.english_grade}, \n\tSocial studies grade: {student.social_studies_grade}, \n\tScience grade: {student.science_grade}"
+        )
+
+def print_students_with_averages(students):
+    print("Student List with Average:")
+    for i, student in enumerate(students, start=1):
+        average = get_average_grade(student)
+        print(f"\t{i}. {student.name} - Section: {student.section} - Average: {average:.2f}")
+    
+    
+def print_general_average(students):
+    if not students:
+        print("No students to calculate average.")
+        return
+    total_averages = sum(get_average_grade(student) for student in students)
+    overall_average = total_averages / len(students)
+    print(f"General Average of all students: {overall_average:.2f}")
+
+def reprobed_students(students):
+    print("Failed Students List:")
+    reprobed = False
+    for student in students:
+        failed = student.failed_subjects()
+        name = student.name
+        section = student.section
+
+        for key, value in failed:
+            print(f"\t- Student: {name} - Section: {section} - Subject: {key} - Grade: {value}")
+            reprobed = True
+    if not reprobed:
+        print("No failed students.")
+
+
+def print_top_students(students, top_n=3):
+    students_with_averages = []
+    for student in students:
+        students_with_averages.append((student, get_average_grade(student)))
+        
+    sorted_students = sorted(students_with_averages, key=lambda x: x[1], reverse=True)
+    top_students = sorted_students[:top_n]
+
+    print(f"Top {top_n} Students by Average:")
+    for i, (student, average) in enumerate(top_students, start=1):
+        print(f"\t{i}. {student.name} - Section: {student.section} - Average: {average:.2f}")
+
+def view_top_students(students):
+        
+    try:               
+        if len(students) == 0:
+            print("No registered students.")
+            return
+
+        print_top_students(students)
+    
+    except Exception as e:
+        print(f"Error getting the student list: {e}")
+        return
+
+    
+
+def view_students(students):    
+
+    try:            
+        if len(students) == 0:
+            print("No registered students.")
+            return
+
+        print_students_list(students)
+        
+    except Exception as e:
+        print(f"Error getting the student list: {e}")
+        return
+
+def view_reprobed_students(students):
+    try:              
+        if len(students) == 0:
+            print("No registered students.")
+            return
+
+        reprobed_students(students)
+
+    except Exception as e:
+        print(f"Error getting the student list: {e}")
+        return
+
+def view_students_with_averages(students):
+    
+    try:    
+        if len(students) == 0:
+            print("No registered students.")
+            return
+
+        print_students_with_averages(students)
+        
+    except Exception as e:
+        print(f"Error getting the student list: {e}")
+        return
+
+def view_general_averages(students):
+    
+    try:    
+        if len(students) == 0:
+            print("No registered students.")
+            return
+
+        print_general_average(students)
+        
+    except Exception as e:
+        print(f"Error getting the student list: {e}")
+        return

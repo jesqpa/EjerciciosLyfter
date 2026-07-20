@@ -14,7 +14,11 @@ def write_to_file(path, text):
     with open(path, 'w', encoding='utf-8' ) as file: 
         file.write(text+'\n')
 
-def append_new_pokemon(data):
+def append_new_pokemon(data,pokemon,jsonfilename):
+	data.append(pokemon)
+	write_to_file(jsonfilename, json.dumps(data, indent=4))
+
+def get_pokemon_data(data, jsonfilename):
 	try:
 		name = input("Digite el nombre del Pokemon: ")		
 		if(name==""):
@@ -56,12 +60,13 @@ def append_new_pokemon(data):
 		"attack": attack,
 		"defense": defense
 	}
-	data.append(new_pokemon)
-	write_to_file('pokemons.json', json.dumps(data, indent=4))
+	append_new_pokemon(data, new_pokemon, jsonfilename)
+	
 
 def main():
-	data = extract_json('pokemons.json')
-	append_new_pokemon(data)
+	jsonfilename = 'pokemons.json'
+	data = extract_json(jsonfilename)
+	get_pokemon_data(data, jsonfilename)
 
 main()
 
